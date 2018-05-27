@@ -1,7 +1,7 @@
 from Adafruit_IO import Client, Feed
 import datetime
 
-aio_sta = Client('a79bbd0b460d40c68d98b53051e8ce12')
+aio_sta = Client('**************************') #In place of * paste your AIO key
 pgt_len = tup_len = 0
 train_arr = []
 
