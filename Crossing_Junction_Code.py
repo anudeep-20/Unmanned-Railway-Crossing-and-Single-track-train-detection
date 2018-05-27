@@ -1,9 +1,9 @@
 from Adafruit_IO import Client
 import datetime, googlemaps , winsound
 
-aio_sta = Client('a79bbd0b460d40c68d98b53051e8ce12')
-aio_tra = Client('b2fa5d67641a45068e3f3c7057d249dd')
-gmaps = googlemaps.Client(key = 'AIzaSyCz7g7lIWptudbh68XGErWQw8ULYmE-QaU')
+aio_sta = Client('**************************') #In place of * paste your AIO key
+aio_tra = Client('**************************') #In place of * paste your AIO key
+gmaps = googlemaps.Client(key = '**********************') #In place of * paste your Google API key
 cbe_len = pgt_len = 0
 train_arr = []
 
