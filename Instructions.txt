@@ -1,0 +1,98 @@
+1.) Install the required software and packages for running the python script.
+
+2.) Connect the GPS module to the Laptop using TTL-USB dongle as shown in GPS_TTL.jpg and wait till it is connected.
+
+
+
+3.) Creating a project in Google API's,
+     
+	a.) Go to https://console.developers.google.com/projectselector/apis/library?supportedpurview=project and login into your Google Account.
+
+	b.) There you will be seeing to click on two options Select or Create.
+     
+	c.) If you have already created a project click "SELECT" and click on any of the existing projects.
+    
+	d.) If you don't have any existing projects click on "CREATE" and a new page appears where you have to give a Unique Project name and your respective organisation(Optional).
+
+
+
+4.) Getting API key,
+    
+	a.) After creating a project, select the project and enter into it.
+    
+	b.) Now type the name of the API you want to get the key. Here in our case, it is Google distance matrix API. Type Distance matrix and press Enter.
+    
+	c.) After going into the API, click "Enable" and go to Credentials.
+    
+	d.) Now click "Create Credentials" and select any one of the methods you want to use the API. Here we want to use the API in the form of Key, so select API key.
+    
+	e.) Now a small window pop-ups showing your API key. Note the API key.
+    
+	f.) Change the API key with your key at appropriate locations in Crossing_Junction_Code.py, Trains_code_16860.py python code.
+
+
+
+Note: It is advisable to have two Adafruit accounts for this project to increase the speed of the transmission and increase in storage of feeds. 
+
+5.) Creating Particular, Access Feeds,
+    
+	a.) Go to: adafruit.io, and log in into your Account if not register a new account.
+    
+	b.) In the first account create feeds similar to Account_1.png
+    
+	c.) Click on "View AIO Key" which shows the AIO key of your account. Note the AIO key.
+    
+	d.) Change the AIO key in Crossing_Junction_Code.py, Railway_Station_Code_cbe.py, Trains_code_16860.py python code in the place of Account 1 AIO key.
+
+
+
+6.) Creating Private Feeds,
+    
+	a.) Go to: adafruit.io, and log in into your another Account if not register a new account.
+    
+	b.) In the first account create feeds similar to Account_2.png
+    
+	c.) Click on "View AIO Key" which shows the AIO key of your account. Note the AIO key.
+    
+	d.) Change the AIO key in Crossing_Junction_Code.py, Trains_code_16860.py python code in the place of Account 2 AIO key.
+
+
+
+7.) For Unmanned Railway Crossing, Run Crossing_Junction_Code.py
+
+8.) For Single Track train detection, Run Railway_Station_Code_cbe.py for updating the Access feed then Run Trains_code_16860.py.
+
+
+
+Note 1: 
+    
+	i) In Crossing_Junction_Code.py, change the static coordinates of the crossing junction and run it.
+    
+	ii) In Trains_code_16860.py, change the COM port of the GPS connected and also for uploading for different trains the feed can be edited and uploaded.
+	iii) Refer Circuit diagrams for better Understanding.
+    
+
+
+Note 2:
+    
+	i) For a Real-time application, Servers should be placed in trains, Crossing junctions, Railway stations with their respective codes running for better working and visualization.
+    
+	ii) But for prototype or testing Purpose Go to: https://drive.google.com/open?id=1X80fwct1u2KqwsosFTgq7NKBoOp6MjvA and download the Trail_aio_send.py python code.
+    
+	iii) Edited the date, time in the lines 8-13 with your present date, change of little time. 
+    
+	iv) If you want to upload a train into the Access then change its time nearer to the current time so it is meant that it had started just now or else change its time to less than 50 minutes the current time.
+    
+	v) To determine the lat, long of your current location Go to:  https://www.maps.ie/coordinates.html and click "Find my Coordinates". Now a small window pop-ups showing your current latitude and longitude value. Note these points.
+    
+	vi) From the line 16, change the Location data depending on what trains you want to show as approaching, what trains are moving away.
+    
+	vii) If you want to showcase a train as approaching, change its lat, long nearer to your current lat, long. If you showcase a train as moving away, change its lat, long dissimilar to your current lat, long.
+    
+	viii) For all the above to be working, some changes in the code also to be made as discussed below.
+    
+	ix) If you are showing Unmanned crossing as the prototype, consider the showing point as a crossing junction so change the static co-ordinates in Crossing_Junction_Code.py with your current lat, long.
+    
+	x) If you wanted to show Single track detection as the prototype, consider one train as static and is at your current location so change the "msg.latitude", "msg.longitude" in Trains_code_16860.py with your current latitude and longitude respectively. 
+    
+	xi) The above change makes the train "16860" to access the "CBE - Access feed" and obtain the information of the trains approaching it thereby calculating the distance between them instead of calculating the distance between two moving trains.
